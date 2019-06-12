@@ -9,22 +9,23 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous"></script>
+   <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <%= csrf_meta_tags %>
   </head>
   <body>
     <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">oriapp</a>
+      <a href="/" class="brand-logo">oriapp</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
        <% if user_signed_in? %>
           <li><a href="blog/new">create</a></li>
-          <li><a href="">logout</a></li>
+          <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>
       <% else %>
-          <li><a href="">login</a></li>
-          <li><a href="">signup</a></li>
+          <li><a href="/users/sign_in">login</a></li>
+          <li><a href="/users/sign_up">signup</a></li>
       <% end %>
       </ul>
     </div>
@@ -32,6 +33,6 @@
     
     <%= yield %>
     
-    <script type= "text/javascript" src="./app.js"></script>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
 </html>

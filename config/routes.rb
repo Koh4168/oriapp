@@ -5,5 +5,5 @@ Rails.application.routes.draw do
  get 'blog' => 'blog#index'
  get 'blog/new' => 'blog#new'
  post "blog" => "blog#create"
-
+ 
 end
