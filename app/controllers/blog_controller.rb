@@ -6,4 +6,9 @@ class BlogController < ApplicationController
   def new
     
   end
+  
+  def create
+    Blog.create(text_params)
+    
+  end
 end
