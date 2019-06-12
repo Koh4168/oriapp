@@ -8,7 +8,11 @@ class BlogController < ApplicationController
   end
   
   def create
-    Blog.create(text: paramsp[:text])
-    
+    Blog.create(blog_params)
+  end
+  
+  private
+  def blog_params
+    pramas.permit(:text)
   end
 end
