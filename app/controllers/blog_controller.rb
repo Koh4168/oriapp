@@ -1,6 +1,6 @@
 class BlogController < ApplicationController
   def index
-    @blog = Blog.all.order("id DESC")
+    @blog = Blog.order("created_at DESC")
   end
   
   def new
