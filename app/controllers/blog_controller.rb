@@ -13,6 +13,6 @@ class BlogController < ApplicationController
   
   private
   def blog_params
-    pramas.permit(:text)
+    params.permit(:text)
   end
 end
