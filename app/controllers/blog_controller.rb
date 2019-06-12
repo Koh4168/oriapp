@@ -8,7 +8,7 @@ class BlogController < ApplicationController
   end
   
   def create
-    Blog.create(text_params)
+    Blog.create(text: paramsp[:text])
     
   end
 end
