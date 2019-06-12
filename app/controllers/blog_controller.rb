@@ -11,7 +11,7 @@ class BlogController < ApplicationController
   end
   
   def create
-    Blog.create(blog_params)
+    Blog.create(text: blog_params[:text], user_id: current_user.id)
   end
   
   private
