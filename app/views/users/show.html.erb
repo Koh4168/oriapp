@@ -1,0 +1,6 @@
+<div class= "row">
+  <% @blog.each do |blog| %>
+     <P><%= blog.text %></P>
+  <% end %>
+  <%= paginate(@blog) %>
+</div>
